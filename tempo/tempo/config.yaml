@@ -1,0 +1,9 @@
+output:
+  text: Hello World
+
+image: tempo
+company: yourcompany
+version: latest
+
+# Details of class inheriting from Wrapper
+wrapper-info: tempo.wrapper.PipelineWrapper
