@@ -2,7 +2,10 @@ import unittest
 import subprocess
 import shutil
 import os
+<<<<<<< HEAD
 
+=======
+>>>>>>> 341bf378ebac6828eee38bec5f6f2df0f6a3aa4c
 
 class MyTestCase(unittest.TestCase):
 #validating the surround init command line functionality
@@ -23,19 +26,33 @@ class MyTestCase(unittest.TestCase):
         print("Output captured:", process1.stdout)
         self.assertIn(process1.stdout,"Name of project: ")
 
+<<<<<<< HEAD
     def test_surround_init_lowercase(self,name='tempor',description='temporary'):
         process = subprocess.run(["surround", "init",'-p',name,'-d',description,'-w','no'], encoding='utf-8',
                                  stdout=subprocess.PIPE,stdin=subprocess.PIPE)
         print("Output captured:", process.stdout)
         self.assertIn(process.stdout, "info: project created at C:\\Users\\sunda\\Surround_Test\\tempor\n")
         self.assertTrue(os.path.exists("tempor"))
+=======
+    def test_surround_init_lowercase(self):
+        process = subprocess.run(["surround", "init",'-p','tempor','-d','temporary','-w','no'], encoding='utf-8',
+                                 stdout=subprocess.PIPE,stdin=subprocess.PIPE)
+        print("Output captured:", process.stdout)
+        self.assertIn(process.stdout, "info: project created at C:\\Users\\sunda\\Surround_Test\\tempor\n")
+>>>>>>> 341bf378ebac6828eee38bec5f6f2df0f6a3aa4c
         shutil.rmtree('tempor')
 
     def test_surround_init_lowercase_underscore(self,name='temporary_',description='temporary'):
         process = subprocess.run(["surround", "init", '-p', name, '-d', description, '-w', 'no'], encoding='utf-8',
                                  stdout=subprocess.PIPE, stdin=subprocess.PIPE)
         print("Output captured:", process.stdout)
+<<<<<<< HEAD
         self.assertIn(process.stdout, "surround: error: Name temporary_ must be lowercase letters")
+=======
+        self.assertIn(process.stdout, "info: project created at C:\\Users\\sunda\\Surround_Test\\tempo\n")
+        self.assertTrue(os.path.exists("tempo"))
+        shutil.rmtree('tempo')
+>>>>>>> 341bf378ebac6828eee38bec5f6f2df0f6a3aa4c
 
 
     def test_surround_init_lowercase_symbol(self,name='temporary*#',description='temporary'):
@@ -65,6 +82,7 @@ class MyTestCase(unittest.TestCase):
                    stdout=subprocess.PIPE, stdin=subprocess.PIPE)
         print("Output captured:", process.stdout)
         self.assertIn(process.stdout, " TypeError: 'validator' should be of class Validator ")
+<<<<<<< HEAD
 
 # Testing the files in surround project
     def test_total_surround_files(self):
@@ -94,5 +112,14 @@ class MyTestCase(unittest.TestCase):
        # print("Output captured:", process.stdout)
         #shutil.rmtree('tempo')
 
+=======
+    def test_surround_init_description_readme(self):
+        process = subprocess.run(["surround", "init", '-p','tempo','-d','temporary files in Read me','-w','no'], encoding='utf-8',
+                             stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+        print("Output captured:", process.stdout)
+        self.assertIn(process.stdout, " TypeError: 'validator' should be of class Validator")
+        self.assertTrue(os.path.exists("tempo"))
+        shutil.rmtree('tempo')
+>>>>>>> 341bf378ebac6828eee38bec5f6f2df0f6a3aa4c
 if __name__ == '__main__':
     unittest.main()
