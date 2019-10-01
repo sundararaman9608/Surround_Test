@@ -1,9 +1,0 @@
-output:
-  text: Hello World
-
-image: tempor
-company: yourcompany
-version: latest
-
-# Details of class inheriting from Wrapper
-wrapper-info: tempor.wrapper.PipelineWrapper
