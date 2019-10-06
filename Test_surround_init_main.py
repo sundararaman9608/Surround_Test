@@ -117,7 +117,7 @@ class MyTestCase(unittest.TestCase):
         x=len(os.listdir('temporary'))
         print(os.listdir('temporary'))
         print(x)
-        self.assertEquals(x,15) #comparing the total number of files created in surround
+        self.assertEquals(x,15)                         #comparing the total number of files created in surround
         shutil.rmtree('temporary')
     def test_created_surround_files(self):
         subprocess.run(["surround", "init", '-p', 'temporary', '-d', 'temporary', '-w', 'no'],
